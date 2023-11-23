@@ -24,15 +24,15 @@ To run this app locally:
     
 2.Navigate to the project directory:
 
-		cd weather-app
+	cd weather-app
 
 3.Install dependencies:
 
-		flutter pub get
+	flutter pub get
 
 4.Run the app:
 
-		flutter run
+	flutter run
 
 API Key
 This app uses the OpenWeatherMap API to fetch weather data. To use the API, obtain an API key:
@@ -41,7 +41,7 @@ Generate an API key.
 
 Add the API key in lib/utils/api.dart:
 
-		const String apiKey = 'YOUR_API_KEY';
+	const String apiKey = 'YOUR_API_KEY';
 
 Contributing
 Contributions are welcome! Please follow the Contribution Guidelines.
