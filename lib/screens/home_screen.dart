@@ -3,6 +3,8 @@ import 'package:weather_app/components/additional_information_card.dart';
 import 'package:weather_app/components/main_card.dart';
 import '../components/forcast_card.dart';
 import '../utils/api.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -18,7 +20,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   void initState() {
     super.initState();
+    _loadLastCity();
     weatherData = getCurrantWeather(city);
+  }
+
+  _loadLastCity() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      city = prefs.getString('lastCity') ?? 'Surat';
+    });
+  }
+
+  _saveLastCity(String city) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('lastCity', city);
   }
 
   @override
@@ -85,6 +100,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           onPressed: () {
                             setState(() {
                               city = cityController.text;
+                              _saveLastCity(city);
                               weatherData = getCurrantWeather(city);
                             });
                           },
