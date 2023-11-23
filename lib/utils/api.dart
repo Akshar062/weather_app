@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'key.dart';
 
-Future<Map<String, dynamic>> getCurrantWeather() async {
+Future<Map<String, dynamic>> getCurrantWeather(String location) async {
   try {
-    String city = "Surat";
+    String city = location;
     final responce = await http.get(
       Uri.parse(
           "http://api.openweathermap.org/data/2.5/forecast?q=$city&APPID=$key"),
