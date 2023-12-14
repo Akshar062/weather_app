@@ -13,6 +13,8 @@ Weather App is a Flutter application that provides current weather information u
 
 ![Weather App Screenshot](https://cdn.jsdelivr.net/gh/Akshar062/weather_app/screenshots/Screenshot1.png)
 
+<img src="https://raw.githubusercontent.com/Akshar062/weather_app/main/screenshots/Screenshot1.png" alt="Weather App Screenshot" width="300" height="200">
+
 
 
 
